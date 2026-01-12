@@ -1,6 +1,22 @@
+import subprocess
+import sys
+
+# Install required packages at runtime
+subprocess.check_call([sys.executable, "-m", "pip", "install", "plotly==5.18.0"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "streamlit"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "matplotlib"])
+subprocess.check_call([sys.executable, "-m", "pip", "install", "seaborn"])
+
+# Now import normally
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+st.write("All packages loaded successfully ✅")
+
 
 st.set_page_config(layout='wide')
 
